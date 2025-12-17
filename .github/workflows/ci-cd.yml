@@ -32,8 +32,5 @@ jobs:
       - name: Build Frontend
         run: docker build -t hospital-frontend ./frontend
 
-      - name: 🐳 Build all services with docker-compose
-        run: docker-compose build
-
       
 
