@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Citas</title>
+  <link rel="stylesheet" href="/src/css/styles.css">
+</head>
+<body>
+
+<div class="navbar">
+  <h1>Citas Médicas</h1>
+  <a href="dashboard.html">Volver</a>
+</div>
+
+<div class="container">
+
+  <div class="card">
+    <h2>Nueva Cita</h2>
+    <form onsubmit="crearCita(event)">
+      <input id="paciente_id" placeholder="ID Paciente" required>
+      <input type="date" id="fecha" required>
+      <input id="motivo" placeholder="Motivo" required>
+      <button>Guardar</button>
+    </form>
+  </div>
+
+  <div class="card">
+    <h2>Listado de Citas</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Paciente</th>
+          <th>Fecha</th>
+          <th>Motivo</th>
+        </tr>
+      </thead>
+      <tbody id="tabla-citas"></tbody>
+    </table>
+  </div>
+
+</div>
+
+<script src="/src/js/guard.js"></script>
+<script type="module" src="/src/js/api.js"></script>
+<script type="module" src="/src/js/citas.js"></script>
+</body>
+</html>

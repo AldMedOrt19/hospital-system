@@ -1,0 +1,137 @@
+/* RESET BÁSICO */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Segoe UI", Tahoma, sans-serif;
+}
+
+/* COLORES */
+:root {
+  --primary: #2563eb;
+  --secondary: #1e293b;
+  --bg: #f4f6f9;
+  --card: #ffffff;
+  --text: #0f172a;
+  --muted: #64748b;
+  --danger: #dc2626;
+  --success: #16a34a;
+}
+
+/* BODY */
+body {
+  background: var(--bg);
+  color: var(--text);
+  min-height: 100vh;
+}
+
+/* NAVBAR */
+.navbar {
+  background: var(--secondary);
+  color: #fff;
+  padding: 15px 30px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.navbar h1 {
+  font-size: 18px;
+}
+
+.navbar a {
+  color: #fff;
+  text-decoration: none;
+  margin-left: 15px;
+  font-size: 14px;
+}
+
+/* CONTENEDOR */
+.container {
+  max-width: 1000px;
+  margin: 30px auto;
+  padding: 20px;
+}
+
+/* CARD */
+.card {
+  background: var(--card);
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+  margin-bottom: 25px;
+}
+
+.card h2 {
+  margin-bottom: 15px;
+}
+
+/* FORMULARIOS */
+form {
+  display: grid;
+  gap: 12px;
+}
+
+input, select, textarea {
+  padding: 10px;
+  border-radius: 6px;
+  border: 1px solid #cbd5e1;
+  font-size: 14px;
+}
+
+textarea {
+  resize: none;
+}
+
+button {
+  padding: 10px;
+  border-radius: 6px;
+  border: none;
+  background: var(--primary);
+  color: white;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+button:hover {
+  opacity: 0.9;
+}
+
+/* TABLAS */
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+th, td {
+  padding: 10px;
+  border-bottom: 1px solid #e5e7eb;
+  text-align: left;
+}
+
+th {
+  background: #f1f5f9;
+}
+
+/* BOTONES SECUNDARIOS */
+.btn-danger {
+  background: var(--danger);
+}
+
+.btn-success {
+  background: var(--success);
+}
+
+/* LOGIN */
+.login-box {
+  max-width: 400px;
+  margin: 120px auto;
+}
+
+/* FOOTER */
+.footer {
+  text-align: center;
+  color: var(--muted);
+  font-size: 13px;
+  margin-top: 40px;
+}

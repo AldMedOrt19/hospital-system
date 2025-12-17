@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Historial Clínico</title>
+  <link rel="stylesheet" href="/src/css/styles.css">
+</head>
+<body>
+
+<div class="navbar">
+  <h1>Historial Clínico</h1>
+  <a href="dashboard.html">Volver</a>
+</div>
+
+<div class="container">
+
+  <div class="card">
+    <h2>Nuevo Historial</h2>
+    <form onsubmit="crearHistorial(event)">
+      <input id="paciente_id" placeholder="ID Paciente" required>
+      <textarea id="descripcion" placeholder="Descripción clínica" rows="4" required></textarea>
+      <button>Guardar</button>
+    </form>
+  </div>
+
+  <div class="card">
+    <h2>Registros</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Paciente</th>
+          <th>Descripción</th>
+        </tr>
+      </thead>
+      <tbody id="tabla-historiales"></tbody>
+    </table>
+  </div>
+
+</div>
+
+<script src="/src/js/guard.js"></script>
+<script type="module" src="/src/js/api.js"></script>
+<script type="module" src="/src/js/historiales.js"></script>
+</body>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Dashboard</title>
+  <link rel="stylesheet" href="/src/css/styles.css">
+</head>
+<body>
+
+<div class="navbar">
+  <h1>Sistema Hospitalario</h1>
+  <div>
+    <a href="pacientes.html">Pacientes</a>
+    <a href="citas.html">Citas</a>
+    <a href="historiales.html">Historiales</a>
+    <a href="#" onclick="logout()">Salir</a>
+  </div>
+</div>
+
+<div class="container">
+  <div class="card">
+    <h2>Bienvenido 👋</h2>
+    <p>Seleccione una opción del menú para comenzar.</p>
+  </div>
+</div>
+
+<script src="/src/js/guard.js"></script>
+<script type="module" src="/src/js/auth.js"></script>
+</body>
+</html>

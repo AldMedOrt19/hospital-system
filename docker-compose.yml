@@ -1,0 +1,45 @@
+version: "3.9"
+
+services:
+  postgres:
+    image: postgres:15
+    environment:
+      POSTGRES_DB: hospital
+      POSTGRES_USER: admin
+      POSTGRES_PASSWORD: admin123
+    ports:
+      - "5432:5432"
+    volumes:
+      - ./database/init.sql:/docker-entrypoint-initdb.d/init.sql
+  pacientes:
+    build: ./backend/pacientes-service
+    container_name: pacientes
+    ports:
+      - "8001:8000"
+    depends_on:
+      - postgres
+
+  citas:
+    build: ./backend/citas-service
+    ports:
+      - "8002:8000"
+    depends_on:
+      - postgres
+
+  historiales:
+    build: ./backend/historiales-service
+    ports:
+      - "8003:8000"
+    depends_on:
+      - postgres
+  auth:
+    build: ./backend/auth-service
+    ports:
+      - "8004:8000"
+    depends_on:
+      - postgres
+
+  frontend:
+    build: ./frontend
+    ports:
+      - "3000:80"
