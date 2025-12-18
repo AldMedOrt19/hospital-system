@@ -1,5 +1,4 @@
-// src/js/auth.js
-const AUTH_API = "http://localhost:8004/auth/login";
+import { API } from "./api.js";
 
 document.getElementById("login-form")?.addEventListener("submit", async (e) => {
   e.preventDefault();
@@ -7,7 +6,7 @@ document.getElementById("login-form")?.addEventListener("submit", async (e) => {
   const username = document.getElementById("username").value;
   const password = document.getElementById("password").value;
 
-  const res = await fetch(AUTH_API, {
+  const res = await fetch(`${API.auth}/login`, {
     method: "POST",
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify({ username, password })
@@ -20,10 +19,8 @@ document.getElementById("login-form")?.addEventListener("submit", async (e) => {
 
   const data = await res.json();
 
-  // 🔑 guardar sesión
   localStorage.setItem("token", data.access_token);
   localStorage.setItem("role", data.role);
 
-  // 🚀 redirigir
   window.location.href = "/dashboard.html";
 });
